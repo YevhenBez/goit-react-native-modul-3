@@ -16,6 +16,7 @@ export const defaultStyles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
+    paddingBottom: 66,
   },
 
   header: {
@@ -107,6 +108,8 @@ export const defaultStyles = StyleSheet.create({
 
     fontSize: 16,
     lineHeight: 19,
+
+    marginBottom: 45,
   },
 
   inputHidden: {
