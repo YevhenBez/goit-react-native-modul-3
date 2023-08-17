@@ -1,9 +1,5 @@
 import { StyleSheet } from "react-native";
 
-export const formwrapWithoutKeyboard = [{ paddingBottom: 66 }];
-
-export const formwrapForKeyboard = [{ paddingBottom: 0 }];
-
 export const defaultStyles = StyleSheet.create({
   container: {
     flex: 1,
