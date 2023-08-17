@@ -27,7 +27,7 @@ const RegistrationScreen = () => {
       <View style={[defaultStyles.container]}>
         <KeyboardAvoidingView
           behavior={Platform.OS == "ios" ? "padding" : "height"}
-          keyboardVerticalOffset={-50}
+          keyboardVerticalOffset={-330}
         >
           <View style={[defaultStyles.formwrap]}>
             <Text style={defaultStyles.header}>Реєстрація</Text>

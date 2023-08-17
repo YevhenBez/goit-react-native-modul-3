@@ -26,7 +26,7 @@ const LoginScreen = () => {
       <View style={defaultStyles.container}>
         <KeyboardAvoidingView
           behavior={Platform.OS == "ios" ? "padding" : "height"}
-          keyboardVerticalOffset={15}
+          keyboardVerticalOffset={-330}
         >
           <View
             style={[
