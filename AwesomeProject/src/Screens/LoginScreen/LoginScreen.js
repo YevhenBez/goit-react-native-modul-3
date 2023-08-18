@@ -17,9 +17,16 @@ import {
 import { useNavigation } from "@react-navigation/native";
 
 const LoginScreen = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const [isShowPassword, setIsShowPassword] = useState(false);
 
   const navigation = useNavigation();
+
+  const handleSubmit = () => {
+    console.log(`Забрал с формы залогинивания мыло ${email} и пароль ${password}`)
+  };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -38,6 +45,8 @@ const LoginScreen = () => {
     
             <TextInput
               placeholder="Адреса електронної пошти"
+              value={email}
+              onChangeText={setEmail}
               style={[defaultStyles.input]}
               placeholderTextColor={"#BDBDBD"}
               
@@ -46,6 +55,8 @@ const LoginScreen = () => {
             <View>
               <TextInput
                 placeholder="Пароль"
+                value={password}
+                onChangeText={setPassword}
                 style={[defaultStyles.inputForPassword]}
                 placeholderTextColor={"#BDBDBD"}
                 
@@ -57,7 +68,10 @@ const LoginScreen = () => {
               </View>
             </View>
 
-            <TouchableOpacity style={defaultStyles.button}>
+            <TouchableOpacity
+              style={defaultStyles.button}
+              onPress={handleSubmit}
+            >
                 <Text style={defaultStyles.buttonText}> Увійти </Text>
             </TouchableOpacity>
 
