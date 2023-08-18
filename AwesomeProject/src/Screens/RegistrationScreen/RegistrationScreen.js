@@ -13,9 +13,7 @@ import {
 
 import { useNavigation } from "@react-navigation/native";
 
-import {
-  defaultStyles,
-} from "../../defaultStyles/defaultStyles.js";
+import { defaultStyles } from "../../defaultStyles/defaultStyles.js";
 
 const RegistrationScreen = () => {
   const [login, setLogin] = useState("");
@@ -27,7 +25,9 @@ const RegistrationScreen = () => {
   const navigation = useNavigation();
 
   const handleSubmit = () => {
-    console.log(`Забрал с формы регистрации логин ${login} , мыло ${email} и пароль ${password}`)
+    console.log(
+      `Забрал с формы регистрации логин ${login} , мыло ${email} и пароль ${password}`
+    );
   };
 
   return (
@@ -39,25 +39,23 @@ const RegistrationScreen = () => {
         >
           <View style={[defaultStyles.formwrap]}>
             <Text style={defaultStyles.header}>Реєстрація</Text>
-    
+
             <TextInput
               placeholder="Логін"
               value={login}
               onChangeText={setLogin}
               style={[defaultStyles.input]}
               placeholderTextColor={"#BDBDBD"}
-              
             />
-    
+
             <TextInput
               placeholder="Адреса електронної пошти"
               value={email}
               onChangeText={setEmail}
               style={[defaultStyles.input]}
               placeholderTextColor={"#BDBDBD"}
-              
             />
-    
+
             <View>
               <TextInput
                 placeholder="Пароль"
@@ -65,7 +63,6 @@ const RegistrationScreen = () => {
                 onChangeText={setPassword}
                 style={[defaultStyles.inputForPassword]}
                 placeholderTextColor={"#BDBDBD"}
-                
               />
               <View style={defaultStyles.showPassButton}>
                 <Text style={defaultStyles.showPassAreaText}>
@@ -73,25 +70,24 @@ const RegistrationScreen = () => {
                 </Text>
               </View>
             </View>
-    
+
             <TouchableOpacity
               style={defaultStyles.button}
               onPress={handleSubmit}
             >
-                <Text style={defaultStyles.buttonText}> Зареєстуватися </Text>
-              </TouchableOpacity>
-                    
+              <Text style={defaultStyles.buttonText}> Зареєстуватися </Text>
+            </TouchableOpacity>
+
             <TouchableOpacity
-                style={defaultStyles.isExistAccount}
-                onPress={() => {
-                  navigation.navigate("LoginScreen");
-                }}
-              >
-                <Text style={defaultStyles.isExistAccountText}>
-                  Вже є акаунт? Увійти
-                </Text>
-              </TouchableOpacity>
-                
+              style={defaultStyles.isExistAccount}
+              onPress={() => {
+                navigation.navigate("LoginScreen");
+              }}
+            >
+              <Text style={defaultStyles.isExistAccountText}>
+                Вже є акаунт? Увійти
+              </Text>
+            </TouchableOpacity>
           </View>
         </KeyboardAvoidingView>
       </View>

@@ -10,9 +10,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import {
-  defaultStyles,
-} from "../../defaultStyles/defaultStyles";
+import { defaultStyles } from "../../defaultStyles/defaultStyles";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -25,7 +23,9 @@ const LoginScreen = () => {
   const navigation = useNavigation();
 
   const handleSubmit = () => {
-    console.log(`Забрал с формы залогинивания мыло ${email} и пароль ${password}`)
+    console.log(
+      `Забрал с формы залогинивания мыло ${email} и пароль ${password}`
+    );
   };
 
   return (
@@ -35,23 +35,17 @@ const LoginScreen = () => {
           behavior={Platform.OS == "ios" ? "padding" : "height"}
           keyboardVerticalOffset={-330}
         >
-          <View
-            style={[
-              defaultStyles.formwrap,
-              styles.formwrap,
-            ]}
-          >
+          <View style={[defaultStyles.formwrap, styles.formwrap]}>
             <Text style={defaultStyles.header}>Увійти</Text>
-    
+
             <TextInput
               placeholder="Адреса електронної пошти"
               value={email}
               onChangeText={setEmail}
               style={[defaultStyles.input]}
               placeholderTextColor={"#BDBDBD"}
-              
             />
-    
+
             <View>
               <TextInput
                 placeholder="Пароль"
@@ -59,7 +53,6 @@ const LoginScreen = () => {
                 onChangeText={setPassword}
                 style={[defaultStyles.inputForPassword]}
                 placeholderTextColor={"#BDBDBD"}
-                
               />
               <View style={defaultStyles.showPassButton}>
                 <Text style={defaultStyles.showPassAreaText}>
@@ -72,21 +65,20 @@ const LoginScreen = () => {
               style={defaultStyles.button}
               onPress={handleSubmit}
             >
-                <Text style={defaultStyles.buttonText}> Увійти </Text>
+              <Text style={defaultStyles.buttonText}> Увійти </Text>
             </TouchableOpacity>
 
             <TouchableOpacity
-                style={defaultStyles.isExistAccount}
-                onPress={() => {
-                  navigation.navigate("RegistrationScreen");
-                }}
-              >
-                <Text style={defaultStyles.isExistAccountText}>
-                  Немає акаунту?
-                  <Text style={defaultStyles.underlineText}>Зареєструватися</Text>
-                </Text>
-              </TouchableOpacity>
-                        
+              style={defaultStyles.isExistAccount}
+              onPress={() => {
+                navigation.navigate("RegistrationScreen");
+              }}
+            >
+              <Text style={defaultStyles.isExistAccountText}>
+                Немає акаунту?
+                <Text style={defaultStyles.underlineText}>Зареєструватися</Text>
+              </Text>
+            </TouchableOpacity>
           </View>
         </KeyboardAvoidingView>
       </View>
