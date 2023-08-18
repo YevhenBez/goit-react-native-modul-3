@@ -18,9 +18,17 @@ import {
 } from "../../defaultStyles/defaultStyles.js";
 
 const RegistrationScreen = () => {
+  const [login, setLogin] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const [isShowPassword, setIsShowPassword] = useState(false);
 
   const navigation = useNavigation();
+
+  const handleSubmit = () => {
+    console.log(`Забрал с формы регистрации логин ${login} , мыло ${email} и пароль ${password}`)
+  };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -34,6 +42,8 @@ const RegistrationScreen = () => {
     
             <TextInput
               placeholder="Логін"
+              value={login}
+              onChangeText={setLogin}
               style={[defaultStyles.input]}
               placeholderTextColor={"#BDBDBD"}
               
@@ -41,6 +51,8 @@ const RegistrationScreen = () => {
     
             <TextInput
               placeholder="Адреса електронної пошти"
+              value={email}
+              onChangeText={setEmail}
               style={[defaultStyles.input]}
               placeholderTextColor={"#BDBDBD"}
               
@@ -49,6 +61,8 @@ const RegistrationScreen = () => {
             <View>
               <TextInput
                 placeholder="Пароль"
+                value={password}
+                onChangeText={setPassword}
                 style={[defaultStyles.inputForPassword]}
                 placeholderTextColor={"#BDBDBD"}
                 
@@ -60,7 +74,10 @@ const RegistrationScreen = () => {
               </View>
             </View>
     
-            <TouchableOpacity style={defaultStyles.button}>
+            <TouchableOpacity
+              style={defaultStyles.button}
+              onPress={handleSubmit}
+            >
                 <Text style={defaultStyles.buttonText}> Зареєстуватися </Text>
               </TouchableOpacity>
                     
